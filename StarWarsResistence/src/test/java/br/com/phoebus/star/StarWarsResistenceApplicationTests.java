@@ -1,4 +1,4 @@
-package com.example.demo;
+package br.com.phoebus.star;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
