@@ -22,7 +22,7 @@ public class RebeldeWS {
 		this.repositorioRebelde = repositorioRebelde;
 	}
 	
-	@PostMapping(value = "/cadastrarRebelde")
+	@PostMapping(value = "cadastrarRebelde")
 	public Rebelde salveRebelde(Rebelde rebelde) {
 		return repositorioRebelde.save(rebelde);
 	}

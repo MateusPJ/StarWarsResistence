@@ -14,6 +14,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import br.com.phoebus.star.enums.Sexo;
 
 @Entity
@@ -45,6 +47,7 @@ public class Rebelde extends EntidadeBase<Long> {
 	private Localizacao localizacao;
 	
 	@OneToMany(mappedBy = "rebelde")
+	@JsonManagedReference
 	private List<InventarioRebelde> inventario;
 	
 	public List<InventarioRebelde> getInventario() {

@@ -11,6 +11,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
 @Entity
 @Table(name="TB_INVENTARIO")
 public class InventarioRebelde extends EntidadeBase<Long> {
@@ -28,10 +31,12 @@ public class InventarioRebelde extends EntidadeBase<Long> {
 	
 	@ManyToOne(cascade = CascadeType.MERGE)
 	@JoinColumn(name="ID_REBELDE")
+	@JsonIdentityInfo(generator=ObjectIdGenerators.IntSequenceGenerator.class, property="@id")
 	private Rebelde rebelde;
 	
 	@OneToOne
 	@JoinColumn(name="ID_RECURSO")
+	@JsonIdentityInfo(generator=ObjectIdGenerators.IntSequenceGenerator.class, property="@id")
 	private Recurso recurso;
 	
 	@Column(name= "NR_QUANTIDADE_DE_RECURSOS", nullable= false)
