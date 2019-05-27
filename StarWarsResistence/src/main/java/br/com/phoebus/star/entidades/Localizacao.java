@@ -9,13 +9,16 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
+/**
+ * 
+ * Classe que representa a Localização no sistema.
+ * 
+ * @author Mateus P Jorge
+ *
+ */
 @Entity
 @Table(name="TB_LOCALIZACAO")
 public class Localizacao extends EntidadeBase<Long> {
-	
-	/**
-	 * 
-	 */
 	
 	private static final long serialVersionUID = 1L;
 

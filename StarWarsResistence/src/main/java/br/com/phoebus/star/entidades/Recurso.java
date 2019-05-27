@@ -9,6 +9,13 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
+/**
+ * 
+ * Classe que representa um Recurso no sistema.
+ * 
+ * @author Mateus P Jorge
+ *
+ */
 @Entity
 @Table(name="TB_RECURSO")
 public class Recurso extends EntidadeBase<Long> {

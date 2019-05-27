@@ -13,16 +13,18 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
+/**
+ * 
+ * Classe que representa um Inventário do Rebelde no sistema.
+ * 
+ * @author Mateus P Jorge
+ *
+ */
 @Entity
 @Table(name="TB_INVENTARIO")
 public class InventarioRebelde extends EntidadeBase<Long> {
-
-	/**
-	 * 
-	 */
 	
 	private static final long serialVersionUID = 1L;
 

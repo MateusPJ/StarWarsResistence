@@ -1,5 +1,12 @@
 package br.com.phoebus.star.enums;
 
+/**
+ * 
+ * Enum de especificação dos tipos de sexo.
+ * 
+ * @author Mateus P Jorge
+ *
+ */
 public enum Sexo {
 
 	M("M", "Masculino"), F("F", "Feminino");
@@ -11,6 +18,15 @@ public enum Sexo {
 
 	private String cod;
 	private String sexo;
+	private Sexo retorno;
+
+	public Sexo getRetorno() {
+		return retorno;
+	}
+
+	public void setRetorno(Sexo retorno) {
+		this.retorno = retorno;
+	}
 
 	public String getCod() {
 		return cod;
@@ -29,7 +45,7 @@ public enum Sexo {
 	}
 	
 	public Sexo getSexoPorCodigo(int cod){
-		Sexo retorno = null;
+		retorno = null;
 		for (Sexo valor : Sexo.values()) {
 			if(valor.getCod().equals(cod)) {
 				return valor;

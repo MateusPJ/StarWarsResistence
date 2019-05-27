@@ -2,7 +2,6 @@ package br.com.phoebus.star.ws;
 
 import java.util.List;
 
-import org.hibernate.validator.constraints.Length;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -101,7 +100,7 @@ public class RebeldeWS {
 
 	@PostMapping("realizaTroca")
 	public Boolean realizaTroca(@RequestBody List<DtoTroca> listaOferecida, @RequestBody List<DtoTroca> listaRecebida) {
-		
+
 		if (!Util.validaTroca(listaOferecida, listaRecebida)) {
 			boolean reposta;
 			reposta = rebeldeTrocando(listaOferecida);
@@ -155,7 +154,7 @@ public class RebeldeWS {
 		for (DtoTroca dtoTroca : listaTroca) {
 			if (rebeldeTrocando == null) {
 				rebeldeTrocando = repositorioRebelde.findById(dtoTroca.getIdRebelde()).get();
-				if(repositorioReport.listarReports(rebeldeTrocando.getId()).size() > 2) {
+				if (repositorioReport.listarReports(rebeldeTrocando.getId()).size() > 2) {
 					return false;
 				}
 			}

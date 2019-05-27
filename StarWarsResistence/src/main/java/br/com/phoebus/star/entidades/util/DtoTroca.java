@@ -2,6 +2,13 @@ package br.com.phoebus.star.entidades.util;
 
 import br.com.phoebus.star.entidades.Recurso;
 
+/**
+ * 
+ * Classe que representa o objeto de transferência nas trocas entre os rebeldes.
+ * 
+ * @author Mateus P Jorge
+ *
+ */
 public class DtoTroca {
 	private Long idRebelde;
 	private Recurso recurso;

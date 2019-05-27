@@ -8,9 +8,18 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+/**
+ * 
+ * Classe que representa um Report no sistema.
+ * 
+ * @author Mateus P Jorge
+ *
+ */
 @Entity
 @Table(name="TB_REPORT")
 public class Report extends EntidadeBase<Long> {
+
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

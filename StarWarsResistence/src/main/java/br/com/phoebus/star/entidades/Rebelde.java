@@ -2,6 +2,7 @@ package br.com.phoebus.star.entidades;
 
 import java.util.List;
 
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -14,19 +15,18 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
-
 import br.com.phoebus.star.enums.Sexo;
 
+/**
+ * 
+ * Classe que representa um Rebelde no sistema.
+ * 
+ * @author Mateus P Jorge
+ *
+ */
 @Entity
 @Table(name="TB_REBELDE")
 public class Rebelde extends EntidadeBase<Long> {
-	
-	/**
-	 * 
-	 */
 	
 	private static final long serialVersionUID = 1L;
 
