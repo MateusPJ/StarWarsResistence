@@ -4,6 +4,7 @@
 package br.com.phoebus.star.repositorios;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.jpa.repository.Query;
 
@@ -31,5 +32,6 @@ public interface IRebeldeRepositorio extends RepositorioBase<Rebelde, Long> {
 	  		"			  HAVING count(r.id_traidor) >= 3) traidores)", 
 	  nativeQuery = true)
 	@Override
-	List<Rebelde> findAll();
+	List<Rebelde> findAll();	
+	
 }

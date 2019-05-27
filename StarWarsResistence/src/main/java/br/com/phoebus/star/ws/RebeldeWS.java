@@ -2,6 +2,7 @@ package br.com.phoebus.star.ws;
 
 import java.util.List;
 
+import org.hibernate.validator.constraints.Length;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -100,12 +101,11 @@ public class RebeldeWS {
 
 	@PostMapping("realizaTroca")
 	public Boolean realizaTroca(@RequestBody List<DtoTroca> listaOferecida, @RequestBody List<DtoTroca> listaRecebida) {
-		if(repositorioReport.listarReports(listaOferecida.isEmpty())) {
-			
-		}
+		
 		if (!Util.validaTroca(listaOferecida, listaRecebida)) {
-			rebeldeTrocando(listaOferecida);
-			rebeldeTrocando(listaRecebida);
+			boolean reposta;
+			reposta = rebeldeTrocando(listaOferecida);
+			reposta = rebeldeTrocando(listaRecebida);
 
 			return true;
 		}
@@ -151,13 +151,15 @@ public class RebeldeWS {
 
 	private boolean rebeldeTrocando(List<DtoTroca> listaTroca) {
 
-		Rebelde rebeldeOferecendo = null;
+		Rebelde rebeldeTrocando = null;
 		for (DtoTroca dtoTroca : listaTroca) {
-			if (rebeldeOferecendo == null) {
-				rebeldeOferecendo = repositorioRebelde.findById(dtoTroca.getIdRebelde()).get();
-				
+			if (rebeldeTrocando == null) {
+				rebeldeTrocando = repositorioRebelde.findById(dtoTroca.getIdRebelde()).get();
+				if(repositorioReport.listarReports(rebeldeTrocando.getId()).size() > 2) {
+					return false;
+				}
 			}
-			return finalizaTroca(dtoTroca.getRecurso().getId(), dtoTroca.getQtde(), rebeldeOferecendo);
+			return finalizaTroca(dtoTroca.getRecurso().getId(), dtoTroca.getQtde(), rebeldeTrocando);
 		}
 
 		return false;
