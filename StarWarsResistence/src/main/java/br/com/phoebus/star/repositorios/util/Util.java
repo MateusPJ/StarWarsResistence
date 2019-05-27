@@ -4,6 +4,7 @@ import java.util.List;
 
 import br.com.phoebus.star.entidades.InventarioRebelde;
 import br.com.phoebus.star.entidades.Rebelde;
+import br.com.phoebus.star.entidades.Report;
 import br.com.phoebus.star.entidades.util.DtoTroca;
 import br.com.phoebus.star.repositorios.IRecursoRepositorio;
 
@@ -28,7 +29,6 @@ public class Util {
 
 	public static boolean validaTroca(List<DtoTroca> itensOferecido, List<DtoTroca> itensRecebidos) {
 		if (itensOferecido == null && itensRecebidos == null && itensOferecido.isEmpty() && itensRecebidos.isEmpty()) {
-
 			return false;
 		}
 		int somaItensOferecidos = contaPontos(itensOferecido);

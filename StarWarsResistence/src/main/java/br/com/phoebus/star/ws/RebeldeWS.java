@@ -100,19 +100,18 @@ public class RebeldeWS {
 
 	@PostMapping("realizaTroca")
 	public Boolean realizaTroca(@RequestBody List<DtoTroca> listaOferecida, @RequestBody List<DtoTroca> listaRecebida) {
-		if(!Util.validaTroca(listaOferecida, listaRecebida)) {
+		if(repositorioReport.listarReports(listaOferecida.isEmpty())) {
+			
+		}
+		if (!Util.validaTroca(listaOferecida, listaRecebida)) {
 			rebeldeTrocando(listaOferecida);
 			rebeldeTrocando(listaRecebida);
-			
+
 			return true;
 		}
 
 		return false;
 	}
-
-//	public void deleteRebelde(Rebelde rebelde) {
-//		repositorioRebelde.delete(rebelde);
-//	}
 
 	@GetMapping(value = "rebeldes")
 	public List<Rebelde> listarRebeldes() {
@@ -156,10 +155,11 @@ public class RebeldeWS {
 		for (DtoTroca dtoTroca : listaTroca) {
 			if (rebeldeOferecendo == null) {
 				rebeldeOferecendo = repositorioRebelde.findById(dtoTroca.getIdRebelde()).get();
+				
 			}
 			return finalizaTroca(dtoTroca.getRecurso().getId(), dtoTroca.getQtde(), rebeldeOferecendo);
 		}
-		
+
 		return false;
 	}
 

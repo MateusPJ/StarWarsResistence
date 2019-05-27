@@ -15,7 +15,7 @@ import br.com.phoebus.star.entidades.Report;
  */
 public interface IReporteRepositorio extends RepositorioBase<Report, Long> {
 	
-	@Query("select r from Report r where r.id = ?1")
+	@Query("select r from Report r.traidor.id = ?1")
 	List<Report> listarReports(Long idTraidor);
 
 }
