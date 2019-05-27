@@ -7,18 +7,17 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 @Table(name="TB_RECURSO")
 public class Recurso extends EntidadeBase<Long> {
 
-	/**
-	 * 
-	 */
-	
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)		
+	@JsonBackReference
 	private Long id;
 	
 	@Column(name= "NM_NOME_DO_RECURSO", nullable= false)
@@ -44,14 +43,13 @@ public class Recurso extends EntidadeBase<Long> {
 	}
 
 	@Override
-	Long getId() {
-		// TODO Auto-generated method stub
-		return null;
+	public Long getId() {
+		return id;
 	}
 
 	@Override
-	void setId(Long id) {
-		// TODO Auto-generated method stub
+	public void setId(Long id) {
+		this.id = id;
 		
 	}
 	

@@ -7,6 +7,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 @Table(name="TB_LOCALIZACAO")
 public class Localizacao extends EntidadeBase<Long> {
@@ -19,6 +21,7 @@ public class Localizacao extends EntidadeBase<Long> {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@JsonBackReference
 	private Long id;
 	
 	@Column(name= "NM_DA_GALAXIA", nullable= false)
@@ -56,13 +59,12 @@ public class Localizacao extends EntidadeBase<Long> {
 
 	@Override
 	Long getId() {
-		// TODO Auto-generated method stub
-		return null;
+		return id;
 	}
 
 	@Override
 	void setId(Long id) {
-		// TODO Auto-generated method stub
+		this.id = id;
 		
 	}
 	

@@ -14,7 +14,9 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import br.com.phoebus.star.enums.Sexo;
 
@@ -46,10 +48,26 @@ public class Rebelde extends EntidadeBase<Long> {
 	@JoinColumn(name="ID_LOCALIZACAO")	
 	private Localizacao localizacao;
 	
-	@OneToMany(mappedBy = "rebelde")
-	@JsonManagedReference
+	@OneToMany
+	@JoinColumn(name = "ID_REBELDE")	
 	private List<InventarioRebelde> inventario;
 	
+	@OneToMany
+	@JoinColumn(name = "ID_TRAIDOR")	
+	private List<Report> reportes;
+	
+	public List<Report> getReportes() {
+		return reportes;
+	}
+
+	public void setReportes(List<Report> reportes) {
+		this.reportes = reportes;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
 	public List<InventarioRebelde> getInventario() {
 		return inventario;
 	}
@@ -92,13 +110,12 @@ public class Rebelde extends EntidadeBase<Long> {
 
 	@Override
 	Long getId() {
-		// TODO Auto-generated method stub
-		return null;
+		return id;
 	}
 
 	@Override
 	void setId(Long id) {
-		// TODO Auto-generated method stub
+		this.id = id;
 		
 	}
 	

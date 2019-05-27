@@ -24,12 +24,12 @@ public interface RepositorioBase<Entidade extends EntidadeBase, ID extends Seria
 
 	/**
 	 * 
-	 * Metodo responsavel por salvar uma entidade genericamente.
+	 * Método responsável por salvar uma entidade genericamente.
 	 *
 	 * @author Mateus P Jorge
 	 * 
-	 * @param S - Entidade generica que extende de EntidadeBase.
-	 * @return S - Entidade generica que extende de EntidadeBase.
+	 * @param S - Entidade genérica que extende de EntidadeBase.
+	 * @return S - Entidade genérica que extende de EntidadeBase.
 	 */
 	<S extends Entidade> S save(S entidade);
 	
