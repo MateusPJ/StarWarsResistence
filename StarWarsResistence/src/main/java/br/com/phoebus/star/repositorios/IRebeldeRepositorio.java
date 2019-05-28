@@ -8,7 +8,7 @@ import br.com.phoebus.star.entidades.Rebelde;
 
 /**
  * 
- * Esta interface representa o armazém dos metodos que são referentes a Rebelde.
+ * Interface responsável por controlar as informações sobre Rebelde.
  * 
  * @author Mateus P Jorge
  *
@@ -20,7 +20,7 @@ public interface IRebeldeRepositorio extends RepositorioBase<Rebelde, Long> {
 
 	/**
 	 * 
-	 * Retorna todos os rebeldes que não são traidores.
+	 * Método responsável por retorna todos os rebeldes que não são traidores.
 	 * 
 	 * @author Mateus P Jorge
 	 */

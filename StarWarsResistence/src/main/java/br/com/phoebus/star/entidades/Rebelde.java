@@ -2,7 +2,6 @@ package br.com.phoebus.star.entidades;
 
 import java.util.List;
 
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -25,37 +24,37 @@ import br.com.phoebus.star.enums.Sexo;
  *
  */
 @Entity
-@Table(name="TB_REBELDE")
+@Table(name = "TB_REBELDE")
 public class Rebelde extends EntidadeBase<Long> {
-	
+
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	
-	@Column(name= "NM_REBELDE", nullable= false)
+
+	@Column(name = "NM_REBELDE", nullable = false)
 	private String nome;
-	
-	@Column(name= "NR_IDADE", nullable = false)
+
+	@Column(name = "NR_IDADE", nullable = false)
 	private int idade;
 
 	@Enumerated(EnumType.STRING)
 	@Column(name = "NM_SEXO", nullable = false)
 	private Sexo sexo;
-	
+
 	@OneToOne
-	@JoinColumn(name="ID_LOCALIZACAO")	
+	@JoinColumn(name = "ID_LOCALIZACAO")
 	private Localizacao localizacao;
-	
+
 	@OneToMany
-	@JoinColumn(name = "ID_REBELDE")	
+	@JoinColumn(name = "ID_REBELDE")
 	private List<InventarioRebelde> inventario;
-	
+
 	@OneToMany
-	@JoinColumn(name = "ID_TRAIDOR")	
+	@JoinColumn(name = "ID_TRAIDOR")
 	private List<Report> reportes;
-	
+
 	public List<Report> getReportes() {
 		return reportes;
 	}
@@ -116,7 +115,7 @@ public class Rebelde extends EntidadeBase<Long> {
 	@Override
 	public void setId(Long id) {
 		this.id = id;
-		
+
 	}
-	
+
 }

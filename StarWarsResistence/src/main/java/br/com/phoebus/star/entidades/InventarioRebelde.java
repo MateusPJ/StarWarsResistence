@@ -23,28 +23,28 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
  *
  */
 @Entity
-@Table(name="TB_INVENTARIO")
+@Table(name = "TB_INVENTARIO")
 public class InventarioRebelde extends EntidadeBase<Long> {
-	
+
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	
+
 	@ManyToOne(cascade = CascadeType.MERGE)
-	@JoinColumn(name="ID_REBELDE")
-	@JsonIdentityInfo(generator=ObjectIdGenerators.IntSequenceGenerator.class, property="id")
+	@JoinColumn(name = "ID_REBELDE")
+	@JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class, property = "id")
 	@JsonBackReference
 	private Rebelde rebelde;
-	
+
 	@OneToOne
-	@JoinColumn(name="ID_RECURSO")
+	@JoinColumn(name = "ID_RECURSO")
 	private Recurso recurso;
-	
-	@Column(name= "NR_QUANTIDADE_DE_RECURSOS", nullable= false)
+
+	@Column(name = "NR_QUANTIDADE_DE_RECURSOS", nullable = false)
 	private int quantidade;
-	
+
 	public Rebelde getRebelde() {
 		return rebelde;
 	}
@@ -78,5 +78,5 @@ public class InventarioRebelde extends EntidadeBase<Long> {
 	void setId(Long id) {
 		this.id = id;
 	}
-	
+
 }

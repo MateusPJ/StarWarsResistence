@@ -2,7 +2,7 @@ package br.com.phoebus.star.enums;
 
 /**
  * 
- * Enum de especificação dos tipos de sexo.
+ * Enum de especificação dos tipos de sexo dos rebeldes.
  * 
  * @author Mateus P Jorge
  *
@@ -43,11 +43,11 @@ public enum Sexo {
 	public void setSexo(String sexo) {
 		this.sexo = sexo;
 	}
-	
-	public Sexo getSexoPorCodigo(int cod){
+
+	public Sexo getSexoPorCodigo(int cod) {
 		retorno = null;
 		for (Sexo valor : Sexo.values()) {
-			if(valor.getCod().equals(cod)) {
+			if (valor.getCod().equals(cod)) {
 				return valor;
 			}
 		}

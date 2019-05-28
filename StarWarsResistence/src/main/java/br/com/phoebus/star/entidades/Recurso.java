@@ -17,22 +17,22 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
  *
  */
 @Entity
-@Table(name="TB_RECURSO")
+@Table(name = "TB_RECURSO")
 public class Recurso extends EntidadeBase<Long> {
 
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)		
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@JsonBackReference
 	private Long id;
-	
-	@Column(name= "NM_NOME_DO_RECURSO", nullable= false)
+
+	@Column(name = "NM_NOME_DO_RECURSO", nullable = false)
 	private String nome;
-	
-	@Column(name= "NR_PONTOS_DO_RECURSO", nullable= false)
+
+	@Column(name = "NR_PONTOS_DO_RECURSO", nullable = false)
 	private int pontos;
-	
+
 	public String getNome() {
 		return nome;
 	}
@@ -57,7 +57,7 @@ public class Recurso extends EntidadeBase<Long> {
 	@Override
 	public void setId(Long id) {
 		this.id = id;
-		
+
 	}
-	
+
 }

@@ -4,7 +4,7 @@ import br.com.phoebus.star.entidades.Recurso;
 
 /**
  * 
- * Esta interface representa o armazém dos metodos que são referentes a Recurso.
+ * Interface responsável por controlar as informações sobre Recurso.
  * 
  * @author Mateus P Jorge
  *

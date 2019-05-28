@@ -17,25 +17,25 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
  *
  */
 @Entity
-@Table(name="TB_LOCALIZACAO")
+@Table(name = "TB_LOCALIZACAO")
 public class Localizacao extends EntidadeBase<Long> {
-	
+
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@JsonBackReference
 	private Long id;
-	
-	@Column(name= "NM_DA_GALAXIA", nullable= false)
+
+	@Column(name = "NM_DA_GALAXIA", nullable = false)
 	private String galaxia;
-	
-	@Column(name= "DS_LATITUDE", nullable= false)
+
+	@Column(name = "DS_LATITUDE", nullable = false)
 	private String latitude;
-	
-	@Column(name= "DS_LOGITUDE", nullable= false)
+
+	@Column(name = "DS_LOGITUDE", nullable = false)
 	private String longitude;
-		
+
 	public String getLatitude() {
 		return latitude;
 	}
@@ -68,7 +68,7 @@ public class Localizacao extends EntidadeBase<Long> {
 	@Override
 	void setId(Long id) {
 		this.id = id;
-		
+
 	}
-	
+
 }

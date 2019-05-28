@@ -8,20 +8,19 @@ import br.com.phoebus.star.entidades.Report;
 
 /**
  * 
- * Esta interface representa o armazém dos metodos que são referentes a Report.
+ * Interface responsável por controlar as informações sobre Report.
  * 
  * @author Mateus P Jorge
  *
  * @param <Entidade> - Entidade generica que recebe apenas Report.
  * @param <ID>       - Entidade generica que recebe o tipo do id da entidade
- *                     Report (Long).
+ *                   Report (Long).
  */
 public interface IReporteRepositorio extends RepositorioBase<Report, Long> {
 
 	/**
 	 * 
-	 * Método responsável por fazer o retorno de todos os reports de um mesmo
-	 * rebelde.
+	 * Método responsável por retorna todos os reports de um mesmo rebelde.
 	 * 
 	 * @author Mateus P Jorge
 	 */

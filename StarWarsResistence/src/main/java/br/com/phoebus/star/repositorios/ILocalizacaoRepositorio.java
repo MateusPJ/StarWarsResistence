@@ -4,8 +4,7 @@ import br.com.phoebus.star.entidades.Localizacao;
 
 /**
  * 
- * Esta interface representa o armazém dos metodos que são referentes a
- * Localização Rebelde.
+ * Interface responsável por controlar as informações sobre Localização.
  * 
  * @author Mateus P Jorge
  *
